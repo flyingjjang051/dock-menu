@@ -40,7 +40,7 @@ a {
 #dockMenu {
   position: fixed;
   width: 100%;
-  bottom: 100px;
+  bottom: 50px;
   display: flex;
   justify-content: center;
   ul {
@@ -97,7 +97,7 @@ a {
   border-radius: 100%;
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: -150%;
   transform: translate(-50%, -60%);
   flex-direction: column;
   h2 {
@@ -106,7 +106,7 @@ a {
   .percent {
     font-size: 120px;
     margin: 30px 0;
-    span {
+    .unit {
       font-size: 20px;
     }
   }

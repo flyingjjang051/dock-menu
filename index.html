@@ -28,40 +28,43 @@
     <main id="main">
       <div id="ability">
         <h2>CSS</h2>
-        <p class="percent">90<span>%</span></p>
+        <p class="percent">
+          <span class="num">90</span>
+          <span class="unit">%</span>
+        </p>
         <p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate iure reiciendis delectus voluptatum saepe quis corrupti explicabo molestias? Praesentium, porro.</p>
       </div>
     </main>
     <nav id="dockMenu">
       <ul>
-        <li>
+        <li data-txt="HTML" data-percent="98" data-bg="rgb(228, 121, 0)">
           <a href=""><span>HTML</span></a>
         </li>
-        <li>
+        <li data-txt="CSS" data-percent="95" data-bg="rgb(102, 209, 2)">
           <a href=""><span>CSS</span></a>
         </li>
-        <li>
+        <li data-txt="JS" data-percent="90" data-bg="rgb(228, 121, 0)">
           <a href=""><span>JS</span></a>
         </li>
-        <li>
+        <li data-txt="VUE" data-percent="70" data-bg="rgb(228, 121, 0)">
           <a href=""><span>VUE</span></a>
         </li>
-        <li>
+        <li data-txt="REACT" data-percent="80" data-bg="rgb(228, 121, 0)">
           <a href=""><span>REACT</span></a>
         </li>
-        <li>
+        <li data-txt="SCSS" data-percent="90" data-bg="rgb(228, 121, 0)">
           <a href=""><span>SCSS</span></a>
         </li>
-        <li>
+        <li data-txt="HTML" data-percent="98" data-bg="rgb(228, 121, 0)">
           <a href=""><span>Mu</span></a>
         </li>
-        <li>
+        <li data-txt="HTML" data-percent="98" data-bg="rgb(228, 121, 0)">
           <a href=""><span>Id</span></a>
         </li>
-        <li>
+        <li data-txt="HTML" data-percent="98" data-bg="rgb(228, 121, 0)">
           <a href=""><span>Lr</span></a>
         </li>
-        <li>
+        <li data-txt="HTML" data-percent="98" data-bg="rgb(228, 121, 0)">
           <a href=""><span>Ab</span></a>
         </li>
       </ul>
@@ -106,6 +109,16 @@
           gsap.to($(this), { flexBasis: "10%" });
           gsap.to($(this).find("span"), { fontSize: 20 });
         });
+      });
+      $("#dockMenu ul li").on("click", function () {
+        const txt = $(this).data("txt");
+        const percent = $(this).data("percent");
+        const bg = $(this).data("bg");
+        $("#ability h2").text(txt);
+        $("#ability .num").text(percent);
+        $("#ability").css({ backgroundColor: bg });
+        gsap.fromTo("#ability", { top: "-150%" }, { top: "50%", ease: "bounce", duration: 1.5 });
+        return false;
       });
     }
   </script>
