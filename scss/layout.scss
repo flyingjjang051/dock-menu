@@ -46,6 +46,7 @@ a {
   ul {
     display: flex;
     justify-content: center;
+    align-items: flex-end;
     width: 800px;
     //prettier-ignore
     @each $color in $colors {
@@ -53,12 +54,14 @@ a {
       li:nth-child(#{$i}) {
         a {
           background-color: $color;
-          @include longShadow(darken($color,10),50);
+          @include longShadow(darken($color,10),100);
         }
       }
     }
     li {
-      flex-basis: 10%;
+      flex-basis: 100%;
+      flex-grow: 1;
+      flex-shrink: 1;
       a {
         overflow: hidden;
         position: relative;
