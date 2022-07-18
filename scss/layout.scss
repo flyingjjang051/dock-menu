@@ -1,9 +1,6 @@
 @import "vars";
 @import "mixin";
-
-// sass list  (a.k.a js array)
-$colors: (rgb(228, 121, 0), rgb(26, 224, 0), rgb(5, 147, 212), rgb(156, 6, 216), rgb(206, 24, 39), rgb(138, 51, 1));
-
+$colors: (rgb(228, 121, 0), rgb(102, 209, 2), rgb(6, 101, 245), rgb(156, 5, 202), rgba(228, 0, 0, 0.705), rgb(8, 187, 133), rgb(28, 182, 209), rgb(236, 0, 0), rgb(33, 63, 161), rgb(104, 2, 95));
 body {
   font-family: "Roboto", "Noto Sans KR", sans-serif;
   font-size: 16px;
@@ -40,134 +37,49 @@ a {
     }
   }
 }
-#main {
+#dockMenu {
+  position: fixed;
+  width: 100%;
+  bottom: 100px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.corona {
-  width: 1200px;
-  height: 600px;
-  //background-color: #000;
-}
-
-.calendarBox {
-  position: absolute;
-  top: 100px;
-  right: 50px;
-  input {
-    width: 340px;
-    height: 50px;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-family: inherit;
-    color: #fff;
-    border: none;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-    border-radius: 10px;
-    outline: none;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
-  }
-}
-.calendar {
-  display: none;
-  width: 300px;
-  padding: 20px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-  .header {
+  ul {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    button {
-      color: #fff;
-      border: none;
-      background: none;
-      outline: none;
-    }
-    .month {
-      font-weight: 700;
-    }
-  }
-  .days {
-    margin: 10px 0;
-    text-transform: uppercase;
-    .sun {
-      span {
-        background-color: rgb(200, 0, 0);
+    justify-content: center;
+    width: 800px;
+    //prettier-ignore
+    @each $color in $colors {
+      $i:index($colors, $color); // index 함수는 scss 배열에서 해당하는 item의 위치를 찾아준다.
+      li:nth-child(#{$i}) {
+        a {
+          background-color: $color;
+          @include longShadow(darken($color,10),50);
+        }
       }
     }
-    .sat {
-      span {
-        background-color: rgb(0, 118, 214);
-      }
-    }
-  }
-  .days,
-  .dates {
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      font-size: 13px;
-      font-weight: 700;
-      li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: calc(100% / 7 - 4px);
+    li {
+      flex-basis: 10%;
+      a {
+        overflow: hidden;
         position: relative;
-        margin: 2px;
-        &.selected span {
-          font-weight: 700;
-          border: 1px solid lighten(rgb(214, 121, 0), 10);
-          box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.1);
-          background-color: rgb(214, 121, 0);
-        }
-        &.today span {
-          overflow: hidden;
-          font-weight: 700;
-          border: 1px solid lighten(rgb(0, 118, 214), 10);
-          box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.1);
-          background-color: rgba(0, 118, 214);
-          @include longShadow(darken(rgb(0, 118, 214), 10));
-        }
-        &.blank span {
-          box-shadow: none;
-          background-color: transparent;
-          pointer-events: none;
-        }
+        background-color: rgb(240, 27, 27);
+        border-radius: 1000px;
+        color: #fff;
+        display: block;
+        font-weight: 700;
+        font-size: 24px;
         &:before {
+          content: "";
           display: block;
           padding-top: 100%;
-          content: "";
         }
         span {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100%;
-          height: 100%;
           position: absolute;
-          top: 0;
-          left: 0;
-          color: #fff;
-          line-height: 1.25;
-          box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
-          border-radius: 100px;
-          background-color: rgba(255, 255, 255, 0.1);
-          box-sizing: border-box;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
         }
       }
     }
-  }
-  .dates li {
-    cursor: pointer;
   }
 }

@@ -33,135 +33,79 @@ a {
   font-weight: 700;
 }
 
-#main {
+#dockMenu {
+  position: fixed;
+  width: 100%;
+  bottom: 100px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
-
-.corona {
-  width: 1200px;
-  height: 600px;
-}
-
-.calendarBox {
-  position: absolute;
-  top: 100px;
-  right: 50px;
-}
-.calendarBox input {
-  width: 340px;
-  height: 50px;
-  margin-bottom: 10px;
-  padding: 10px;
-  font-family: inherit;
-  color: #fff;
-  border: none;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
-  border-radius: 10px;
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-}
-
-.calendar {
-  display: none;
-  width: 300px;
-  padding: 20px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-}
-.calendar .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #fff;
-}
-.calendar .header button {
-  color: #fff;
-  border: none;
-  background: none;
-  outline: none;
-}
-.calendar .header .month {
-  font-weight: 700;
-}
-.calendar .days {
-  margin: 10px 0;
-  text-transform: uppercase;
-}
-.calendar .days .sun span {
-  background-color: rgb(200, 0, 0);
-}
-.calendar .days .sat span {
-  background-color: rgb(0, 118, 214);
-}
-.calendar .days ul,
-.calendar .dates ul {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 13px;
-  font-weight: 700;
-}
-.calendar .days ul li,
-.calendar .dates ul li {
+#dockMenu ul {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: calc(14.2857142857% - 4px);
-  position: relative;
-  margin: 2px;
+  width: 800px;
 }
-.calendar .days ul li.selected span,
-.calendar .dates ul li.selected span {
-  font-weight: 700;
-  border: 1px solid #ff950a;
-  box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.1);
-  background-color: rgb(214, 121, 0);
+#dockMenu ul li:nth-child(1) a {
+  background-color: rgb(228, 121, 0);
+  text-shadow: 1px 1px 0px #b15e00,2px 2px 0px #b15e00,3px 3px 0px #b15e00,4px 4px 0px #b15e00,5px 5px 0px #b15e00,6px 6px 0px #b15e00,7px 7px 0px #b15e00,8px 8px 0px #b15e00,9px 9px 0px #b15e00,10px 10px 0px #b15e00,11px 11px 0px #b15e00,12px 12px 0px #b15e00,13px 13px 0px #b15e00,14px 14px 0px #b15e00,15px 15px 0px #b15e00,16px 16px 0px #b15e00,17px 17px 0px #b15e00,18px 18px 0px #b15e00,19px 19px 0px #b15e00,20px 20px 0px #b15e00,21px 21px 0px #b15e00,22px 22px 0px #b15e00,23px 23px 0px #b15e00,24px 24px 0px #b15e00,25px 25px 0px #b15e00,26px 26px 0px #b15e00,27px 27px 0px #b15e00,28px 28px 0px #b15e00,29px 29px 0px #b15e00,30px 30px 0px #b15e00,31px 31px 0px #b15e00,32px 32px 0px #b15e00,33px 33px 0px #b15e00,34px 34px 0px #b15e00,35px 35px 0px #b15e00,36px 36px 0px #b15e00,37px 37px 0px #b15e00,38px 38px 0px #b15e00,39px 39px 0px #b15e00,40px 40px 0px #b15e00,41px 41px 0px #b15e00,42px 42px 0px #b15e00,43px 43px 0px #b15e00,44px 44px 0px #b15e00,45px 45px 0px #b15e00,46px 46px 0px #b15e00,47px 47px 0px #b15e00,48px 48px 0px #b15e00,49px 49px 0px #b15e00,50px 50px 0px #b15e00;
 }
-.calendar .days ul li.today span,
-.calendar .dates ul li.today span {
+#dockMenu ul li:nth-child(2) a {
+  background-color: rgb(102, 209, 2);
+  text-shadow: 1px 1px 0px #4d9e02,2px 2px 0px #4d9e02,3px 3px 0px #4d9e02,4px 4px 0px #4d9e02,5px 5px 0px #4d9e02,6px 6px 0px #4d9e02,7px 7px 0px #4d9e02,8px 8px 0px #4d9e02,9px 9px 0px #4d9e02,10px 10px 0px #4d9e02,11px 11px 0px #4d9e02,12px 12px 0px #4d9e02,13px 13px 0px #4d9e02,14px 14px 0px #4d9e02,15px 15px 0px #4d9e02,16px 16px 0px #4d9e02,17px 17px 0px #4d9e02,18px 18px 0px #4d9e02,19px 19px 0px #4d9e02,20px 20px 0px #4d9e02,21px 21px 0px #4d9e02,22px 22px 0px #4d9e02,23px 23px 0px #4d9e02,24px 24px 0px #4d9e02,25px 25px 0px #4d9e02,26px 26px 0px #4d9e02,27px 27px 0px #4d9e02,28px 28px 0px #4d9e02,29px 29px 0px #4d9e02,30px 30px 0px #4d9e02,31px 31px 0px #4d9e02,32px 32px 0px #4d9e02,33px 33px 0px #4d9e02,34px 34px 0px #4d9e02,35px 35px 0px #4d9e02,36px 36px 0px #4d9e02,37px 37px 0px #4d9e02,38px 38px 0px #4d9e02,39px 39px 0px #4d9e02,40px 40px 0px #4d9e02,41px 41px 0px #4d9e02,42px 42px 0px #4d9e02,43px 43px 0px #4d9e02,44px 44px 0px #4d9e02,45px 45px 0px #4d9e02,46px 46px 0px #4d9e02,47px 47px 0px #4d9e02,48px 48px 0px #4d9e02,49px 49px 0px #4d9e02,50px 50px 0px #4d9e02;
+}
+#dockMenu ul li:nth-child(3) a {
+  background-color: rgb(6, 101, 245);
+  text-shadow: 1px 1px 0px #0550c3,2px 2px 0px #0550c3,3px 3px 0px #0550c3,4px 4px 0px #0550c3,5px 5px 0px #0550c3,6px 6px 0px #0550c3,7px 7px 0px #0550c3,8px 8px 0px #0550c3,9px 9px 0px #0550c3,10px 10px 0px #0550c3,11px 11px 0px #0550c3,12px 12px 0px #0550c3,13px 13px 0px #0550c3,14px 14px 0px #0550c3,15px 15px 0px #0550c3,16px 16px 0px #0550c3,17px 17px 0px #0550c3,18px 18px 0px #0550c3,19px 19px 0px #0550c3,20px 20px 0px #0550c3,21px 21px 0px #0550c3,22px 22px 0px #0550c3,23px 23px 0px #0550c3,24px 24px 0px #0550c3,25px 25px 0px #0550c3,26px 26px 0px #0550c3,27px 27px 0px #0550c3,28px 28px 0px #0550c3,29px 29px 0px #0550c3,30px 30px 0px #0550c3,31px 31px 0px #0550c3,32px 32px 0px #0550c3,33px 33px 0px #0550c3,34px 34px 0px #0550c3,35px 35px 0px #0550c3,36px 36px 0px #0550c3,37px 37px 0px #0550c3,38px 38px 0px #0550c3,39px 39px 0px #0550c3,40px 40px 0px #0550c3,41px 41px 0px #0550c3,42px 42px 0px #0550c3,43px 43px 0px #0550c3,44px 44px 0px #0550c3,45px 45px 0px #0550c3,46px 46px 0px #0550c3,47px 47px 0px #0550c3,48px 48px 0px #0550c3,49px 49px 0px #0550c3,50px 50px 0px #0550c3;
+}
+#dockMenu ul li:nth-child(4) a {
+  background-color: rgb(156, 5, 202);
+  text-shadow: 1px 1px 0px #760498,2px 2px 0px #760498,3px 3px 0px #760498,4px 4px 0px #760498,5px 5px 0px #760498,6px 6px 0px #760498,7px 7px 0px #760498,8px 8px 0px #760498,9px 9px 0px #760498,10px 10px 0px #760498,11px 11px 0px #760498,12px 12px 0px #760498,13px 13px 0px #760498,14px 14px 0px #760498,15px 15px 0px #760498,16px 16px 0px #760498,17px 17px 0px #760498,18px 18px 0px #760498,19px 19px 0px #760498,20px 20px 0px #760498,21px 21px 0px #760498,22px 22px 0px #760498,23px 23px 0px #760498,24px 24px 0px #760498,25px 25px 0px #760498,26px 26px 0px #760498,27px 27px 0px #760498,28px 28px 0px #760498,29px 29px 0px #760498,30px 30px 0px #760498,31px 31px 0px #760498,32px 32px 0px #760498,33px 33px 0px #760498,34px 34px 0px #760498,35px 35px 0px #760498,36px 36px 0px #760498,37px 37px 0px #760498,38px 38px 0px #760498,39px 39px 0px #760498,40px 40px 0px #760498,41px 41px 0px #760498,42px 42px 0px #760498,43px 43px 0px #760498,44px 44px 0px #760498,45px 45px 0px #760498,46px 46px 0px #760498,47px 47px 0px #760498,48px 48px 0px #760498,49px 49px 0px #760498,50px 50px 0px #760498;
+}
+#dockMenu ul li:nth-child(5) a {
+  background-color: rgba(228, 0, 0, 0.705);
+  text-shadow: 1px 1px 0px rgba(177, 0, 0, 0.705),2px 2px 0px rgba(177, 0, 0, 0.705),3px 3px 0px rgba(177, 0, 0, 0.705),4px 4px 0px rgba(177, 0, 0, 0.705),5px 5px 0px rgba(177, 0, 0, 0.705),6px 6px 0px rgba(177, 0, 0, 0.705),7px 7px 0px rgba(177, 0, 0, 0.705),8px 8px 0px rgba(177, 0, 0, 0.705),9px 9px 0px rgba(177, 0, 0, 0.705),10px 10px 0px rgba(177, 0, 0, 0.705),11px 11px 0px rgba(177, 0, 0, 0.705),12px 12px 0px rgba(177, 0, 0, 0.705),13px 13px 0px rgba(177, 0, 0, 0.705),14px 14px 0px rgba(177, 0, 0, 0.705),15px 15px 0px rgba(177, 0, 0, 0.705),16px 16px 0px rgba(177, 0, 0, 0.705),17px 17px 0px rgba(177, 0, 0, 0.705),18px 18px 0px rgba(177, 0, 0, 0.705),19px 19px 0px rgba(177, 0, 0, 0.705),20px 20px 0px rgba(177, 0, 0, 0.705),21px 21px 0px rgba(177, 0, 0, 0.705),22px 22px 0px rgba(177, 0, 0, 0.705),23px 23px 0px rgba(177, 0, 0, 0.705),24px 24px 0px rgba(177, 0, 0, 0.705),25px 25px 0px rgba(177, 0, 0, 0.705),26px 26px 0px rgba(177, 0, 0, 0.705),27px 27px 0px rgba(177, 0, 0, 0.705),28px 28px 0px rgba(177, 0, 0, 0.705),29px 29px 0px rgba(177, 0, 0, 0.705),30px 30px 0px rgba(177, 0, 0, 0.705),31px 31px 0px rgba(177, 0, 0, 0.705),32px 32px 0px rgba(177, 0, 0, 0.705),33px 33px 0px rgba(177, 0, 0, 0.705),34px 34px 0px rgba(177, 0, 0, 0.705),35px 35px 0px rgba(177, 0, 0, 0.705),36px 36px 0px rgba(177, 0, 0, 0.705),37px 37px 0px rgba(177, 0, 0, 0.705),38px 38px 0px rgba(177, 0, 0, 0.705),39px 39px 0px rgba(177, 0, 0, 0.705),40px 40px 0px rgba(177, 0, 0, 0.705),41px 41px 0px rgba(177, 0, 0, 0.705),42px 42px 0px rgba(177, 0, 0, 0.705),43px 43px 0px rgba(177, 0, 0, 0.705),44px 44px 0px rgba(177, 0, 0, 0.705),45px 45px 0px rgba(177, 0, 0, 0.705),46px 46px 0px rgba(177, 0, 0, 0.705),47px 47px 0px rgba(177, 0, 0, 0.705),48px 48px 0px rgba(177, 0, 0, 0.705),49px 49px 0px rgba(177, 0, 0, 0.705),50px 50px 0px rgba(177, 0, 0, 0.705);
+}
+#dockMenu ul li:nth-child(6) a {
+  background-color: rgb(8, 187, 133);
+  text-shadow: 1px 1px 0px #068a62,2px 2px 0px #068a62,3px 3px 0px #068a62,4px 4px 0px #068a62,5px 5px 0px #068a62,6px 6px 0px #068a62,7px 7px 0px #068a62,8px 8px 0px #068a62,9px 9px 0px #068a62,10px 10px 0px #068a62,11px 11px 0px #068a62,12px 12px 0px #068a62,13px 13px 0px #068a62,14px 14px 0px #068a62,15px 15px 0px #068a62,16px 16px 0px #068a62,17px 17px 0px #068a62,18px 18px 0px #068a62,19px 19px 0px #068a62,20px 20px 0px #068a62,21px 21px 0px #068a62,22px 22px 0px #068a62,23px 23px 0px #068a62,24px 24px 0px #068a62,25px 25px 0px #068a62,26px 26px 0px #068a62,27px 27px 0px #068a62,28px 28px 0px #068a62,29px 29px 0px #068a62,30px 30px 0px #068a62,31px 31px 0px #068a62,32px 32px 0px #068a62,33px 33px 0px #068a62,34px 34px 0px #068a62,35px 35px 0px #068a62,36px 36px 0px #068a62,37px 37px 0px #068a62,38px 38px 0px #068a62,39px 39px 0px #068a62,40px 40px 0px #068a62,41px 41px 0px #068a62,42px 42px 0px #068a62,43px 43px 0px #068a62,44px 44px 0px #068a62,45px 45px 0px #068a62,46px 46px 0px #068a62,47px 47px 0px #068a62,48px 48px 0px #068a62,49px 49px 0px #068a62,50px 50px 0px #068a62;
+}
+#dockMenu ul li:nth-child(7) a {
+  background-color: rgb(28, 182, 209);
+  text-shadow: 1px 1px 0px #168fa4,2px 2px 0px #168fa4,3px 3px 0px #168fa4,4px 4px 0px #168fa4,5px 5px 0px #168fa4,6px 6px 0px #168fa4,7px 7px 0px #168fa4,8px 8px 0px #168fa4,9px 9px 0px #168fa4,10px 10px 0px #168fa4,11px 11px 0px #168fa4,12px 12px 0px #168fa4,13px 13px 0px #168fa4,14px 14px 0px #168fa4,15px 15px 0px #168fa4,16px 16px 0px #168fa4,17px 17px 0px #168fa4,18px 18px 0px #168fa4,19px 19px 0px #168fa4,20px 20px 0px #168fa4,21px 21px 0px #168fa4,22px 22px 0px #168fa4,23px 23px 0px #168fa4,24px 24px 0px #168fa4,25px 25px 0px #168fa4,26px 26px 0px #168fa4,27px 27px 0px #168fa4,28px 28px 0px #168fa4,29px 29px 0px #168fa4,30px 30px 0px #168fa4,31px 31px 0px #168fa4,32px 32px 0px #168fa4,33px 33px 0px #168fa4,34px 34px 0px #168fa4,35px 35px 0px #168fa4,36px 36px 0px #168fa4,37px 37px 0px #168fa4,38px 38px 0px #168fa4,39px 39px 0px #168fa4,40px 40px 0px #168fa4,41px 41px 0px #168fa4,42px 42px 0px #168fa4,43px 43px 0px #168fa4,44px 44px 0px #168fa4,45px 45px 0px #168fa4,46px 46px 0px #168fa4,47px 47px 0px #168fa4,48px 48px 0px #168fa4,49px 49px 0px #168fa4,50px 50px 0px #168fa4;
+}
+#dockMenu ul li:nth-child(8) a {
+  background-color: rgb(236, 0, 0);
+  text-shadow: 1px 1px 0px #b90000,2px 2px 0px #b90000,3px 3px 0px #b90000,4px 4px 0px #b90000,5px 5px 0px #b90000,6px 6px 0px #b90000,7px 7px 0px #b90000,8px 8px 0px #b90000,9px 9px 0px #b90000,10px 10px 0px #b90000,11px 11px 0px #b90000,12px 12px 0px #b90000,13px 13px 0px #b90000,14px 14px 0px #b90000,15px 15px 0px #b90000,16px 16px 0px #b90000,17px 17px 0px #b90000,18px 18px 0px #b90000,19px 19px 0px #b90000,20px 20px 0px #b90000,21px 21px 0px #b90000,22px 22px 0px #b90000,23px 23px 0px #b90000,24px 24px 0px #b90000,25px 25px 0px #b90000,26px 26px 0px #b90000,27px 27px 0px #b90000,28px 28px 0px #b90000,29px 29px 0px #b90000,30px 30px 0px #b90000,31px 31px 0px #b90000,32px 32px 0px #b90000,33px 33px 0px #b90000,34px 34px 0px #b90000,35px 35px 0px #b90000,36px 36px 0px #b90000,37px 37px 0px #b90000,38px 38px 0px #b90000,39px 39px 0px #b90000,40px 40px 0px #b90000,41px 41px 0px #b90000,42px 42px 0px #b90000,43px 43px 0px #b90000,44px 44px 0px #b90000,45px 45px 0px #b90000,46px 46px 0px #b90000,47px 47px 0px #b90000,48px 48px 0px #b90000,49px 49px 0px #b90000,50px 50px 0px #b90000;
+}
+#dockMenu ul li:nth-child(9) a {
+  background-color: rgb(33, 63, 161);
+  text-shadow: 1px 1px 0px #182e77,2px 2px 0px #182e77,3px 3px 0px #182e77,4px 4px 0px #182e77,5px 5px 0px #182e77,6px 6px 0px #182e77,7px 7px 0px #182e77,8px 8px 0px #182e77,9px 9px 0px #182e77,10px 10px 0px #182e77,11px 11px 0px #182e77,12px 12px 0px #182e77,13px 13px 0px #182e77,14px 14px 0px #182e77,15px 15px 0px #182e77,16px 16px 0px #182e77,17px 17px 0px #182e77,18px 18px 0px #182e77,19px 19px 0px #182e77,20px 20px 0px #182e77,21px 21px 0px #182e77,22px 22px 0px #182e77,23px 23px 0px #182e77,24px 24px 0px #182e77,25px 25px 0px #182e77,26px 26px 0px #182e77,27px 27px 0px #182e77,28px 28px 0px #182e77,29px 29px 0px #182e77,30px 30px 0px #182e77,31px 31px 0px #182e77,32px 32px 0px #182e77,33px 33px 0px #182e77,34px 34px 0px #182e77,35px 35px 0px #182e77,36px 36px 0px #182e77,37px 37px 0px #182e77,38px 38px 0px #182e77,39px 39px 0px #182e77,40px 40px 0px #182e77,41px 41px 0px #182e77,42px 42px 0px #182e77,43px 43px 0px #182e77,44px 44px 0px #182e77,45px 45px 0px #182e77,46px 46px 0px #182e77,47px 47px 0px #182e77,48px 48px 0px #182e77,49px 49px 0px #182e77,50px 50px 0px #182e77;
+}
+#dockMenu ul li:nth-child(10) a {
+  background-color: rgb(104, 2, 95);
+  text-shadow: 1px 1px 0px #360131,2px 2px 0px #360131,3px 3px 0px #360131,4px 4px 0px #360131,5px 5px 0px #360131,6px 6px 0px #360131,7px 7px 0px #360131,8px 8px 0px #360131,9px 9px 0px #360131,10px 10px 0px #360131,11px 11px 0px #360131,12px 12px 0px #360131,13px 13px 0px #360131,14px 14px 0px #360131,15px 15px 0px #360131,16px 16px 0px #360131,17px 17px 0px #360131,18px 18px 0px #360131,19px 19px 0px #360131,20px 20px 0px #360131,21px 21px 0px #360131,22px 22px 0px #360131,23px 23px 0px #360131,24px 24px 0px #360131,25px 25px 0px #360131,26px 26px 0px #360131,27px 27px 0px #360131,28px 28px 0px #360131,29px 29px 0px #360131,30px 30px 0px #360131,31px 31px 0px #360131,32px 32px 0px #360131,33px 33px 0px #360131,34px 34px 0px #360131,35px 35px 0px #360131,36px 36px 0px #360131,37px 37px 0px #360131,38px 38px 0px #360131,39px 39px 0px #360131,40px 40px 0px #360131,41px 41px 0px #360131,42px 42px 0px #360131,43px 43px 0px #360131,44px 44px 0px #360131,45px 45px 0px #360131,46px 46px 0px #360131,47px 47px 0px #360131,48px 48px 0px #360131,49px 49px 0px #360131,50px 50px 0px #360131;
+}
+#dockMenu ul li {
+  flex-basis: 10%;
+}
+#dockMenu ul li a {
   overflow: hidden;
+  position: relative;
+  background-color: rgb(240, 27, 27);
+  border-radius: 1000px;
+  color: #fff;
+  display: block;
   font-weight: 700;
-  border: 1px solid #0a91ff;
-  box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.1);
-  background-color: rgb(0, 118, 214);
-  text-shadow: 1px 1px 0px #005aa3,2px 2px 0px #005aa3,3px 3px 0px #005aa3,4px 4px 0px #005aa3,5px 5px 0px #005aa3,6px 6px 0px #005aa3,7px 7px 0px #005aa3,8px 8px 0px #005aa3,9px 9px 0px #005aa3,10px 10px 0px #005aa3,11px 11px 0px #005aa3,12px 12px 0px #005aa3,13px 13px 0px #005aa3,14px 14px 0px #005aa3,15px 15px 0px #005aa3,16px 16px 0px #005aa3,17px 17px 0px #005aa3,18px 18px 0px #005aa3,19px 19px 0px #005aa3,20px 20px 0px #005aa3;
+  font-size: 24px;
 }
-.calendar .days ul li.blank span,
-.calendar .dates ul li.blank span {
-  box-shadow: none;
-  background-color: transparent;
-  pointer-events: none;
-}
-.calendar .days ul li:before,
-.calendar .dates ul li:before {
+#dockMenu ul li a:before {
+  content: "";
   display: block;
   padding-top: 100%;
-  content: "";
 }
-.calendar .days ul li span,
-.calendar .dates ul li span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+#dockMenu ul li a span {
   position: absolute;
-  top: 0;
-  left: 0;
-  color: #fff;
-  line-height: 1.25;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
-  border-radius: 100px;
-  background-color: rgba(255, 255, 255, 0.1);
-  box-sizing: border-box;
-}
-.calendar .dates li {
-  cursor: pointer;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
