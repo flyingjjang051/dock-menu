@@ -25,26 +25,32 @@
     <header id="header">
       <h1><strong>DOCK</strong>MENU</h1>
     </header>
-    <main id="main"></main>
+    <main id="main">
+      <div id="ability">
+        <h2>CSS</h2>
+        <p class="percent">90<span>%</span></p>
+        <p class="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate iure reiciendis delectus voluptatum saepe quis corrupti explicabo molestias? Praesentium, porro.</p>
+      </div>
+    </main>
     <nav id="dockMenu">
       <ul>
         <li>
-          <a href=""><span>Ps</span></a>
+          <a href=""><span>HTML</span></a>
         </li>
         <li>
-          <a href=""><span>Ai</span></a>
+          <a href=""><span>CSS</span></a>
         </li>
         <li>
-          <a href=""><span>Ae</span></a>
+          <a href=""><span>JS</span></a>
         </li>
         <li>
-          <a href=""><span>Pr</span></a>
+          <a href=""><span>VUE</span></a>
         </li>
         <li>
-          <a href=""><span>Xd</span></a>
+          <a href=""><span>REACT</span></a>
         </li>
         <li>
-          <a href=""><span>Dw</span></a>
+          <a href=""><span>SCSS</span></a>
         </li>
         <li>
           <a href=""><span>Mu</span></a>
@@ -66,24 +72,41 @@
     //0,1,2,3,4,5,6,7,8,9
     const max = 50;
     const min = 15;
-    $("#dockMenu ul li").on("mouseenter", function () {
-      const selected = $(this).index();
-      $("#dockMenu ul li").each(function (idx, item) {
-        console.log(Math.abs(selected - idx));
-        let basis = max - Math.abs(selected - idx) * 15;
-        if (basis < min) {
-          basis = min;
-        }
-        gsap.to($(this), { flexBasis: `${basis}%`, ease: "power4", duration: 0.45 });
-        gsap.to($(this).find("span"), { fontSize: basis, ease: "power4", duration: 0.45 });
-      });
-      //console.log(selected);
+    gsap.defaults({
+      duration: 0.4,
+      ease: "power4",
     });
-    $("#dockMenu ul li").on("mouseleave", function () {
-      $("#dockMenu ul li").each(function (idx, item) {
-        gsap.to($(this), { flexBasis: "10%", ease: "power4", duration: 0.45 });
-        gsap.to($(this).find("span"), { fontSize: 24, ease: "power4", duration: 0.45 });
-      });
+    gsap.from("#dockMenu ul li", {
+      y: -300,
+      opacity: 0,
+      ease: "bounce",
+      duration: 1.5,
+      stagger: { each: 0.1 },
+      onComplete: function () {
+        console.log("끝났당.");
+        makeDockMenu();
+      },
     });
+    function makeDockMenu() {
+      $("#dockMenu ul li").on("mouseenter", function () {
+        const selected = $(this).index();
+        $("#dockMenu ul li").each(function (idx, item) {
+          console.log(Math.abs(selected - idx));
+          let basis = max - Math.abs(selected - idx) * 15;
+          if (basis < min) {
+            basis = min;
+          }
+          gsap.to($(this), { flexBasis: `${basis}%` });
+          gsap.to($(this).find("span"), { fontSize: basis });
+        });
+        //console.log(selected);
+      });
+      $("#dockMenu ul li").on("mouseleave", function () {
+        $("#dockMenu ul li").each(function (idx, item) {
+          gsap.to($(this), { flexBasis: "10%" });
+          gsap.to($(this).find("span"), { fontSize: 20 });
+        });
+      });
+    }
   </script>
 </html>
