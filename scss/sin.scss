@@ -1,0 +1,67 @@
+@import "vars";
+@import "mixin";
+
+// sass list  (a.k.a js array)
+$colors: (rgb(228, 121, 0), rgb(26, 224, 0), rgb(5, 147, 212), rgb(156, 6, 216), rgb(206, 24, 39), rgb(138, 51, 1));
+
+html {
+}
+body {
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  color: #111;
+  // prettier-ignore
+  background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05), 
+                                                     rgba(255, 255, 255, 0.05) 1px, 
+                                                       0, transparent 50px);
+  background-color: #333;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#header {
+  height: 60px;
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: fixed;
+  h1 {
+    font-weight: 300;
+    font-size: 18px;
+    @include longShadow(#ccc, 50);
+    text-transform: uppercase;
+    strong {
+      font-weight: 700;
+    }
+  }
+}
+$cube-width: 400px;
+#main {
+  .list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    li {
+      width: 200px;
+      height: 350px;
+      background-color: #f00;
+      color: #fff;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

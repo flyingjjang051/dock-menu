@@ -1,0 +1,55 @@
+body {
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  color: #111;
+  background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 1px, 0, transparent 50px);
+  background-color: #333;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#header {
+  height: 60px;
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: fixed;
+}
+#header h1 {
+  font-weight: 300;
+  font-size: 18px;
+  text-shadow: 1px 1px 0px #ccc,2px 2px 0px #ccc,3px 3px 0px #ccc,4px 4px 0px #ccc,5px 5px 0px #ccc,6px 6px 0px #ccc,7px 7px 0px #ccc,8px 8px 0px #ccc,9px 9px 0px #ccc,10px 10px 0px #ccc,11px 11px 0px #ccc,12px 12px 0px #ccc,13px 13px 0px #ccc,14px 14px 0px #ccc,15px 15px 0px #ccc,16px 16px 0px #ccc,17px 17px 0px #ccc,18px 18px 0px #ccc,19px 19px 0px #ccc,20px 20px 0px #ccc,21px 21px 0px #ccc,22px 22px 0px #ccc,23px 23px 0px #ccc,24px 24px 0px #ccc,25px 25px 0px #ccc,26px 26px 0px #ccc,27px 27px 0px #ccc,28px 28px 0px #ccc,29px 29px 0px #ccc,30px 30px 0px #ccc,31px 31px 0px #ccc,32px 32px 0px #ccc,33px 33px 0px #ccc,34px 34px 0px #ccc,35px 35px 0px #ccc,36px 36px 0px #ccc,37px 37px 0px #ccc,38px 38px 0px #ccc,39px 39px 0px #ccc,40px 40px 0px #ccc,41px 41px 0px #ccc,42px 42px 0px #ccc,43px 43px 0px #ccc,44px 44px 0px #ccc,45px 45px 0px #ccc,46px 46px 0px #ccc,47px 47px 0px #ccc,48px 48px 0px #ccc,49px 49px 0px #ccc,50px 50px 0px #ccc;
+  text-transform: uppercase;
+}
+#header h1 strong {
+  font-weight: 700;
+}
+
+#main .list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+#main .list li {
+  width: 200px;
+  height: 350px;
+  background-color: #f00;
+  color: #fff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+}
